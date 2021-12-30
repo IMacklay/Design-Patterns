@@ -1,7 +1,7 @@
 package ru.mahalov;
 
-import ru.mahalov.singleton.impl.*;
-import ru.mahalov.singleton.MusicSourceSingleton;
+import ru.mahalov.creational.singleton.impl.*;
+import ru.mahalov.creational.singleton.MusicSourceSingleton;
 
 public class DesignTest {
 

@@ -1,4 +1,4 @@
-package ru.mahalov.singleton;
+package ru.mahalov.creational.singleton;
 
 public interface MusicSourceSingleton {
 

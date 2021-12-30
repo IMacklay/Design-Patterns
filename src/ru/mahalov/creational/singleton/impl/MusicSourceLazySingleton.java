@@ -1,6 +1,6 @@
-package ru.mahalov.singleton.impl;
+package ru.mahalov.creational.singleton.impl;
 
-import ru.mahalov.singleton.MusicSourceSingleton;
+import ru.mahalov.creational.singleton.MusicSourceSingleton;
 
 public class MusicSourceLazySingleton implements MusicSourceSingleton {
     private static MusicSourceLazySingleton instance;

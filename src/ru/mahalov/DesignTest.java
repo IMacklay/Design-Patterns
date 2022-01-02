@@ -1,47 +1,38 @@
 package ru.mahalov;
 
+import ru.mahalov.behavior.observer.ObserverDemo;
+import ru.mahalov.creational.buider.BuilderDemo;
 import ru.mahalov.creational.buider.PlaySettings;
 import ru.mahalov.creational.buider.VariantI.PlaySettingsSubClass;
+import ru.mahalov.creational.prototype.PrototypeDemo;
 import ru.mahalov.creational.prototype.Song;
+import ru.mahalov.creational.singleton.SingletonDemo;
 import ru.mahalov.creational.singleton.impl.*;
 import ru.mahalov.creational.singleton.MusicSourceSingleton;
 
 public class DesignTest {
 
-    public static void main(String[] args) throws CloneNotSupportedException {
+    public static void main(String[] args) {
 
         // ======= Singleton ========
         separator("Singleton Demo");
-        MusicSourceSingleton musicSource = MusicSourceClassHolderSingleton.getInstance();
-        MusicSourceSingleton musicSource_one = MusicSourceClassHolderSingleton.getInstance();
-
-        System.out.println(musicSource);
-        System.out.println( "Ссылка объектов одинаковая - "+(musicSource == musicSource_one) );
+        RunDemo singletonDemo = new SingletonDemo();
+        singletonDemo.run();
 
         // ======= Prototype ========
         separator("Prototype Demo");
-        Song song_one = new Song("AC/DC","Hells Bells", 185000, musicSource);
-
-        Song song_two = song_one.clone();
-
-        song_two.setTitle("Black in black");
-        //song_two.setMusicSource(MusicSourceSimpleSingleton.getInstance());
-
-        System.out.println(song_one);
-        System.out.println(song_two);
-
-        System.out.println( "Ссылка объектов одинаковая - "+(song_one == song_two) );
-        System.out.println( "Ссылка поля на др. класс та же - "+(song_one.getMusicSource()==song_two.getMusicSource()) );
+        RunDemo prototypeDemo = new PrototypeDemo();
+        prototypeDemo.run();
 
         // ======= Builder ========
         separator("Builder Demo");
+        RunDemo builderDemo = new BuilderDemo();
+        builderDemo.run();
 
-        PlaySettings playSettings = new PlaySettingsSubClass.Builder(10)
-                .setBalance(5)
-                .setRandomOrderPlaying(true)
-                .build();
-
-        System.out.println(playSettings);
+        // ======= Observer ========
+        separator("Observer");
+        RunDemo observerDemo = new ObserverDemo();
+        observerDemo.run();
 
     }
 

@@ -10,6 +10,7 @@ import ru.mahalov.creational.singleton.SingletonDemo;
 import ru.mahalov.creational.singleton.impl.*;
 import ru.mahalov.creational.singleton.MusicSourceSingleton;
 import ru.mahalov.structural.decorator.DecoratorDemo;
+import ru.mahalov.structural.facade.FacadeDemo;
 
 public class DesignTest {
 
@@ -36,9 +37,15 @@ public class DesignTest {
 //        observerDemo.run();
 
         // ======= Decorator ========
-        separator("Decorator");
-        RunDemo decoratorDemo = new DecoratorDemo();
-        decoratorDemo.run();
+//        separator("Decorator");
+//        RunDemo decoratorDemo = new DecoratorDemo();
+//        decoratorDemo.run();
+
+        // ======= Facade =========
+        separator("Facade");
+        RunDemo facadeDemo = new FacadeDemo();
+        facadeDemo.run();
+
     }
 
     private static void separator(String title){
